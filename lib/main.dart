@@ -16,9 +16,12 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.indigo,
+        primarySwatch: Colors.blue,
       ),
-      home: MyHomePage()
+      initialRoute: "/",
+      getPages: [
+        GetPage(name: "/", page: ()=>MyHomePage())
+      ],
     );
   }
 }
