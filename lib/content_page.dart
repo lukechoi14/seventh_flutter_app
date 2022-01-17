@@ -162,6 +162,14 @@ class _ContentPageState extends State<ContentPage> {
                     itemCount: info.length,
                     itemBuilder: (_, i){
                       return GestureDetector(
+                        onTap: ()=>Get.toNamed("/detail/",arguments: {
+                          'title': info[i]['title'].toString(),
+                          'text': info[i]['text'].toString(),
+                          'name': info[i]['name'].toString(),
+                          'img': info[i]['img'].toString(),
+                          'time': info[i]['time'].toString(),
+                          'prize': info[i]['prize'].toString(),
+                        } ),
                         child: Container(
                           padding: const EdgeInsets.only(left: 20, top: 20),
                           height: 220,
@@ -277,7 +285,7 @@ class _ContentPageState extends State<ContentPage> {
                       child: ListView.builder(
                           shrinkWrap: true,
                           scrollDirection: Axis.vertical,
-                          itemCount: 4,
+                          itemCount: list.length,
                           itemBuilder: (_, i){
                             return Container(
                               width: width,
@@ -294,7 +302,7 @@ class _ContentPageState extends State<ContentPage> {
                                     CircleAvatar(
                                       radius:40,
                                       backgroundImage: AssetImage(
-                                          "img/background.jpg"
+                                          list[i]['img'],
                                       ),
                                     ),
                                     SizedBox(width: 10,),
@@ -303,10 +311,10 @@ class _ContentPageState extends State<ContentPage> {
                                       crossAxisAlignment: CrossAxisAlignment.start,
                                       children: [
                                         Text(
-                                          "Status",
+                                          list[i]['status'],
                                           style: TextStyle(
-                                              color:Color(0xFFfdebb2),
-                                              fontSize: 12,
+                                              color:Colors.orange,
+                                              fontSize: 18,
                                               decoration: TextDecoration.none
                                           ),
                                         ),
@@ -314,7 +322,7 @@ class _ContentPageState extends State<ContentPage> {
                                         SizedBox(
                                           width: 170,
                                           child: Text(
-                                            "Text",
+                                            list[i]['text'],
 
                                             style: TextStyle(
                                                 color:Color(0xFF3b3f42),
@@ -332,7 +340,7 @@ class _ContentPageState extends State<ContentPage> {
                                       height: 70,
 
                                       child: Text(
-                                        "Time",
+                                        list[i]['time'],
                                         style: TextStyle(
                                             fontSize: 10,
                                             decoration: TextDecoration.none,
