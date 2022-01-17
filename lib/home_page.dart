@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-// import 'package:flutter_getx/content_page.dart';
+import 'package:seventh_flutter_app/content_page.dart';
 
 
 class MyHomePage extends StatefulWidget {
@@ -71,14 +71,13 @@ class _MyHomePageState extends State<MyHomePage> {
 
 
                     child: ElevatedButton(
-
                       style: ElevatedButton.styleFrom(
                         elevation: 0,
                         primary: Color(0xFFfbc33e),
                         shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(30.0),
                       ),),
-                      onPressed: ()=>Container(),
+                      onPressed: ()=>Get.to(()=>ContentPage()),
                       child: const Text(
                         "Get started",
                         style: TextStyle(
