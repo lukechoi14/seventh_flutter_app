@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:seventh_flutter_app/recent_contest.dart';
 
 // import 'my_detail_page.dart';
 class ContentPage extends StatefulWidget {
@@ -257,7 +258,7 @@ class _ContentPageState extends State<ContentPage> {
                     Text(
                       "Show all",
                       style: TextStyle(
-                          color:Color(0xFFcfd5b3),
+                          color:Colors.orange,
                           fontSize: 15,
                           decoration: TextDecoration.none
                       ),
@@ -272,6 +273,9 @@ class _ContentPageState extends State<ContentPage> {
                           color: Color(0xFFfdc33c)
                       ),
                       child: GestureDetector(
+                        onTap: (){Get.to(()=>RecentContest());
+                        },
+                        child: Icon(Icons.arrow_forward_ios,color: Colors.white,),
 
                       ),
                     )
