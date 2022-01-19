@@ -273,7 +273,8 @@ class _ContentPageState extends State<ContentPage> {
                           color: Color(0xFFfdc33c)
                       ),
                       child: GestureDetector(
-                        onTap: (){Get.to(()=>RecentContest());
+                        onTap: (){
+                          Get.to(()=>RecentContest());
                         },
                         child: Icon(Icons.arrow_forward_ios,color: Colors.white,),
 
